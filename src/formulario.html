@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+        <section class="section--container__responsive">
+
+            <section class="section--mainrow__responsive first--section">
+                    <h1 class="generaltext">Cadastramento de produto</h1>
+                    <p>Cadastramento de produto através de web service.</p>
+                    <form class="form--register" action="http://127.0.0.1:880/adicionarProduto"  method="post">
+                        <p>Descrição:</p>
+                        <input class="input--register" type="text" name="descricao" value="" placeholder="leite, pão...">
+                        <p>Preco:</p>
+                        <input class="input--register" type="text" name="preco" value="">
+                        <p>Quantidade:</p>
+                        <input class="input--register" type="text" name="quant" value="">
+                        <p>Data de fabricação:</p>
+                        <input class="input--register" type="text" name="dataFabricacao" value="" placeholder="2017-10-16...">
+                        <p class="p--radio__display">Tipo de produto:</p>
+                        <input class="input--radio" type="radio" name="tipo" value="1" checked><p class="p--nomargin">Bem durável</p>
+                        <input class="input--radio" type="radio" name="tipo" value="2"><p class="p--nomargin">Bem de Consumo</p>
+                        <input type="submit" value="cadastrar" class="input--main__style input--button">
+                    </form> 
+                </section>
+
+        </section>
+
+        <section class="section--container__responsive">
+
+            <section class="section--row__responsive">
+                <h1 class="generaltext">Consultar produto</h1>
+                <p>Consulta produto no estoque através de web service.</p>
+                <form action="http://127.0.0.1:880/consultarProduto"  method="get">
+                    <input class="input--down" type="text" name="descricao" value="" placeholder="descrição do produto...">
+                    <input type="submit" value="consultar" class="input--button input--consult__style">
+                </form> 
+            </section>
+
+            <section class="section--row__responsive">
+                <h1 class="generaltext">Remover produto</h1>
+                <p>Remove produto do estoque através de web service.</p>
+                <form action="http://127.0.0.1:880/removerProduto"  method="get">
+                    <input class="input--down" type="text" name="descricao" value="" placeholder="descrição do produto...">
+                    <input type="submit" value="remover" class="input--remove__style input--button">
+                </form> 
+            </section>
+
+            <section class="section--row__responsive">
+                <h1 class="generaltext"> Consultar total em estoque</h1>
+                <p>Consulta a quantidade total de produtos em estoque.</p>
+                <form action="http://127.0.0.1:880/totalEmEstoque"  method="get">
+                      <input type="submit" value="consultar" class="input--button input--consult__style">
+                </form> 
+            </section>
+
+            <section class="section--row__responsive">
+                <h1 class="generaltext">Consultar valor total em estoque</h1>
+                <p>Consulta o valor total dos produtos em estoque.</p>
+                <form action="http://127.0.0.1:880/valorEmEstoque"  method="get">
+                      <input type="submit" value="consultar" class="input--button input--consult__style">
+                </form>
+            </section>
+
+        </section> 
+
+        <style>
+
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                background-color: white;
+            }
+            .generaltext, p{
+                font-family: Arial;
+                text-align: center;
+            }
+            .section--container__responsive{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border-bottom: dashed;
+                border-color: gray;
+            }
+            
+            .input--down{
+                display: block;
+                margin: 0px auto;
+                margin-bottom: 10px;
+            }
+            .input--main__style{
+                background-color: #00FF00;
+            }
+            .input--remove__style{
+                background-color: red;
+            }
+            .input--consult__style{
+                background-color: darkblue;
+            }
+            .input--button{
+                font-weight: bold;
+                font-family: Arial;
+                font-size: medium;
+                border-color: transparent;
+                display: block;
+                margin: 0px auto;
+                margin-bottom: 10px;
+                color: white;
+            }
+            .input--register{
+                display: inline;
+            }
+            .input--radio{
+                display: inline;
+            }
+            input{
+                display: block;
+                border-radius: 7px;
+                padding: 10px;
+                border-style:solid;
+                border-color: lightgray;
+                color: black;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+            .p--radio__display{
+                display: block;
+            }
+            form p{
+                text-align:initial;
+                display: inline;
+                margin-left: 15px;
+            }
+            .p--nomargin{
+                margin-left: 0px;
+                margin-right: 10px;
+            }
+
+        </style>
+
+    </body>
+
+</html>
+
